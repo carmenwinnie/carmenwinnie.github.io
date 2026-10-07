@@ -1,0 +1,27 @@
+/* Language-sensitive typography keeps the same editorial hierarchy. */
+.about-bio,.publication h3,.project p,.timeline-role{overflow-wrap:break-word;orphans:3;widows:3}
+html[lang=en] .about-bio{line-height:1.85}
+html[lang=fr] .about-bio,html[lang=fr] .project p,html[lang=fr] .timeline-role{line-height:1.9;hyphens:auto}
+html[lang=fr] .publication h3{hyphens:auto;line-height:1.5}
+html[lang=zh-Hans] .about-bio,html[lang=zh-Hans] .project p{line-height:1.95;line-break:strict;word-break:normal}
+.section-heading h2,.school-details h3,.timeline-company{text-wrap:balance}
+/* Respond to reading focus without adding badges or extra text. */
+.timeline-year-label,.timeline-year-label::before,.timeline-entry::after,.timeline-month-date{transition:color .2s,background-color .2s,box-shadow .2s}
+.timeline-content{border-radius:5px;transition:background-color .2s,box-shadow .2s}
+.timeline-year-group:focus-within .timeline-year-label{color:var(--accent)!important}
+.timeline-year-group:focus-within .timeline-year-label::before{box-shadow:0 0 0 4px var(--detail-wash)}
+.timeline-year-group:focus-within .timeline-entry::after{background:var(--accent)}
+.timeline-year-group:focus-within .timeline-content{background:color-mix(in srgb,var(--detail-wash) 45%,transparent);box-shadow:0 0 0 7px color-mix(in srgb,var(--detail-wash) 45%,transparent)}
+@media(hover:hover) and (pointer:fine){.timeline-year-group:hover .timeline-year-label{color:var(--accent)!important}.timeline-year-group:hover .timeline-year-label::before{box-shadow:0 0 0 4px var(--detail-wash)}.timeline-year-group:hover .timeline-entry::after{background:var(--accent)}.timeline-year-group:hover .timeline-month-date{color:var(--ink)}.timeline-year-group:hover .timeline-content{background:color-mix(in srgb,var(--detail-wash) 45%,transparent);box-shadow:0 0 0 7px color-mix(in srgb,var(--detail-wash) 45%,transparent)}}
+.reading-return{display:flex;align-items:center;gap:6px;max-width:100%;margin-top:14px;padding:5px 0;border:0;background:none;color:var(--accent);font:11px/1.5 var(--sans);text-align:left;cursor:pointer;text-underline-offset:4px}.reading-return[hidden]{display:none}.reading-return:hover{text-decoration:underline}.reading-return .icon{width:13px;height:13px;flex:none}
+.portrait-open{display:block;cursor:zoom-in;border-radius:2px}.portrait-open:focus-visible{outline:2px solid var(--accent);outline-offset:6px}.portrait-open:hover{text-decoration:none}
+.portrait-dialog{width:min(580px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);box-shadow:0 24px 90px #31271938;overflow:auto;overscroll-behavior:contain}
+.portrait-dialog::backdrop{background:#372f2859;backdrop-filter:blur(5px)}
+.portrait-dialog>img{display:block;width:100%;height:min(68dvh,540px);object-fit:contain;background:white;border-radius:3px}
+.portrait-dialog h2{font:400 24px/1.5 var(--serif);margin:13px 0 0}.portrait-dialog h2 span{font:12px/1.6 var(--sans);color:var(--muted);margin-left:9px}
+.portrait-close{position:absolute;right:24px;top:24px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);cursor:pointer;box-shadow:0 2px 9px #46332610}.portrait-close:hover{background:var(--detail-wash)}
+body.portrait-is-open{overflow:hidden}
+@media(max-width:680px){html[lang=fr] .profile-overview .about-bio{line-height:1.85}html[lang=zh-Hans] .profile-overview .about-bio{line-height:1.95}.portrait-dialog{padding:12px}.portrait-close{right:18px;top:18px}.portrait-dialog h2{font-size:22px}.reading-return{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.timeline-year-label,.timeline-year-label::before,.timeline-entry::after,.timeline-month-date,.timeline-content{transition:none}}
+
+.proper-name,html[lang=fr] .about-bio strong,html[lang=fr] .about-bio a{hyphens:none}

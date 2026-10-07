@@ -1,0 +1,75 @@
+/* Small hand-drawn accents, leaving the academic text unchanged. */
+:root { --detail-wash: #f2eaf5; --detail-pencil: #a38baf; }
+html[data-theme="yellow"] { --detail-wash: #fff0c6; --detail-pencil: #b49772; }
+.profile-overview .hello-note { display:flex; align-items:center; gap:11px; }
+.greeting-flower { width:29px; height:32px; margin-top:-9px; margin-bottom:-5px; color:var(--detail-pencil); transform:rotate(10deg); transform-origin:50% 90%; }
+.flower-petals { fill:var(--detail-wash); }
+.flower-center { fill:var(--hobby-accent, #b897ad); stroke:none; }
+/* Two small corners catch the light like a mounted photograph. */
+.portrait-frame { position:relative; }
+.portrait-frame::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(135deg,#ffffff9c 0 12px,transparent 12px) top left / 22px 22px no-repeat,linear-gradient(315deg,#ffffffb3 0 10px,transparent 10px) bottom right / 20px 20px no-repeat; }
+.portrait-paper::after { content:""; position:absolute; left:7px; bottom:7px; width:21px; height:17px; border-left:1px solid var(--detail-pencil); border-bottom:1px solid var(--detail-pencil); opacity:.28; }
+/* A short, curved ink rule echoes the underline beneath her name. */
+.section-heading h2::after { height:4px; width:34px; background:none; border-bottom:1px solid var(--detail-pencil); border-radius:0 0 60% 35%; transform:rotate(-4deg); opacity:.45; }
+.about-bio a { background-image:linear-gradient(var(--detail-wash),var(--detail-wash)); background-position:0 100%; background-repeat:no-repeat; background-size:0 35%; transition:background-size .25s ease; }
+.about-bio a:hover,.about-bio a:focus-visible { background-size:100% 35%; }
+.hobby { position:relative; isolation:isolate; }
+.hobby::before { content:""; position:absolute; z-index:-1; width:72px; height:67px; left:50%; top:15px; border-radius:47% 53% 62% 38% / 44% 40% 60% 56%; background:var(--detail-wash); opacity:0; transform:translateX(-50%) rotate(-9deg) scale(.85); transition:opacity .3s ease,transform .3s ease; }
+.hobby figcaption { position:relative; width:fit-content; margin:0 auto; }
+.hobby figcaption::after { content:""; position:absolute; bottom:-5px; left:14%; width:72%; height:4px; border-bottom:1px solid var(--detail-pencil); border-radius:50%; opacity:0; transform:scaleX(.45) rotate(-4deg); transition:opacity .3s ease,transform .3s ease; }
+.piano-notes { opacity:0; }
+.camera-lens { transform-origin:50px 54px; }
+@media(hover:hover) and (pointer:fine) {
+  .hello-note:hover .greeting-flower { animation:flower-nod .8s ease both; }
+  .hobby:hover::before { opacity:.6; transform:translateX(-50%) rotate(-9deg) scale(1); }
+  .hobby:hover figcaption::after { opacity:.6; transform:scaleX(1) rotate(-4deg); }
+  .hobby-piano:hover .piano-notes { animation:notes-rise 1.2s ease both; }
+  .hobby-camera:hover .camera-lens { animation:lens-focus .7s ease both; }
+  .hobby-calligraphy:hover .ink-stroke,.hobby-crafts:hover .craft-thread { animation:ink-draw 1s ease both; }
+  .hobby-food:hover .food-steam { animation:steam-rise 1.2s ease both; }
+  .hobby-sport:hover .hobby-art { animation:ball-hop .65s ease both; }
+}
+@keyframes flower-nod { 0%,100%{transform:rotate(10deg)} 40%{transform:rotate(-7deg)} 75%{transform:rotate(14deg)} }
+@keyframes notes-rise { 0%{opacity:0;transform:translateY(4px)} 30%,75%{opacity:.8} 100%{opacity:0;transform:translateY(-8px)} }
+@keyframes lens-focus { 0%,100%{transform:scale(1)} 50%{transform:scale(.83)} }
+@keyframes ink-draw { from{stroke-dasharray:1;stroke-dashoffset:1} to{stroke-dasharray:1;stroke-dashoffset:0} }
+@keyframes steam-rise { 0%{opacity:.2;transform:translateY(3px)} 65%{opacity:1;transform:translateY(-3px)} 100%{opacity:1;transform:translateY(0)} }
+@keyframes ball-hop { 0%,100%{transform:rotate(var(--tilt))} 45%{transform:translateY(-8px) rotate(5deg)} 75%{transform:translateY(0) rotate(-2deg)} }
+@media(max-width:680px) { .greeting-flower{width:24px;height:27px;margin-top:-5px}.profile-overview .hello-note{gap:8px}.hobby::before{width:65px;height:62px} }
+@media(prefers-reduced-motion:reduce) { .greeting-flower,.hobby-art,.hobby-art *{animation:none!important}.hobby::before,.hobby figcaption::after,.about-bio a{transition:none} }
+@media print { .greeting-flower,.portrait-frame::after,.portrait-paper::after,.hobby::before,.hobby figcaption::after,.piano-notes{display:none}.about-bio a{background:none} }
+
+/* The first page: a narrow woven bookmark and a small photograph caption. */
+.profile-overview{position:relative}
+.hero-bookmark{position:absolute;right:4px;top:-1px;width:21px;height:57px;filter:drop-shadow(1px 3px 2px #715e4010);pointer-events:none}
+.portrait-caption{position:absolute;left:14px;bottom:4px;display:flex;align-items:baseline;gap:10px;pointer-events:none;color:#756657;font:italic 12px/1 var(--serif);transition:transform .28s ease}
+.portrait-caption-zh{font:400 8px/1.2 var(--sans);letter-spacing:.13em;color:#9b8b7b}
+.profile-overview .profile-contact{gap:12px 19px;width:fit-content;max-width:100%;padding-top:13px;border-top:1px solid var(--line);font-size:12px}
+.profile-overview .contact-item{gap:8px;line-height:1.6}
+.profile-overview .contact-item .icon{width:15px;height:15px}
+.profile-overview .location{padding-left:18px;border-left:1px solid var(--line)}
+@media(hover:hover) and (pointer:fine){.portrait:hover .portrait-caption{transform:translateY(-3px) rotate(-.7deg)}}
+@media(max-width:900px){.profile-overview .profile-contact{font-size:11px;gap:10px 15px}.profile-overview .location{padding-left:14px}}
+@media(max-width:680px){.hero-bookmark{width:14px;height:38px;right:0}.profile-overview .portrait-frame{height:158px;border-bottom-width:21px}.portrait-caption{font-size:10px;left:10px;bottom:4px;gap:6px}.portrait-caption-zh{font-size:7px;letter-spacing:.04em}.profile-overview .profile-contact{font-size:10.5px;width:100%;gap:10px 16px;padding-top:12px}.profile-overview .location{border-left:0;padding-left:0}.profile-overview .contact-item{gap:6px}.profile-overview .contact-item .icon{width:13px;height:13px}}
+@media(max-width:350px){.profile-overview .portrait-frame{height:139px}.portrait-caption{font-size:9px;gap:4px;left:8px}.portrait-caption-zh{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.portrait-caption{transition:none}.portrait:hover .portrait-caption{transform:none}}
+@media print{.hero-bookmark{display:none}.portrait-caption{display:none}.profile-overview .profile-contact{border:0;padding-top:0}}
+
+/* Useful little gestures: bookmark, copy control, and a flower at the end. */
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.bookmark-link{position:absolute;right:-7px;top:-1px;width:44px;height:62px;z-index:2;display:flex;justify-content:center;align-items:flex-start}
+.bookmark-link .hero-bookmark{position:static;flex:none;transition:transform .22s ease}
+.bookmark-tip{position:absolute;right:35px;top:13px;width:max-content;max-width:170px;padding:4px 9px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--muted);font:11px/1.5 var(--sans);opacity:0;pointer-events:none;transform:translateX(4px);transition:opacity .2s,transform .2s}
+.bookmark-link:hover .hero-bookmark,.bookmark-link:focus-visible .hero-bookmark{transform:translateY(3px)}
+.bookmark-link:hover .bookmark-tip,.bookmark-link:focus-visible .bookmark-tip{opacity:1;transform:none}
+.email-action{position:relative;display:flex;align-items:center;gap:5px;min-width:0;max-width:100%}
+.copy-email{display:none;align-items:center;justify-content:center;flex:none;width:30px;height:30px;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--muted);padding:6px;cursor:pointer;transition:background .2s,border-color .2s}
+.js .copy-email{display:inline-flex}.copy-email .icon{width:14px;height:14px;pointer-events:none}.copy-email:hover,.copy-email:focus-visible{background:var(--detail-wash);border-color:var(--line)}.copy-email .copy-check{display:none}.copy-email[data-copied="true"] .copy-icon{display:none}.copy-email[data-copied="true"] .copy-check{display:block}
+.copy-feedback{position:absolute;top:100%;right:0;z-index:3;font:11px/1.5 var(--sans);color:var(--accent);background:var(--paper);border-radius:3px;white-space:nowrap}.copy-feedback:not(:empty){padding:3px 7px;border:1px solid var(--line)}
+.profile-overview .portrait,.portrait-paper{transition:transform .32s cubic-bezier(.22,1,.36,1)}
+footer{position:relative}.footer-flower{width:24px;height:29px;flex:none;color:var(--detail-pencil);transform:rotate(-12deg);margin:0 15px}
+@media(hover:hover) and (pointer:fine){.portrait-scene:hover .portrait{transform:rotate(0) translateY(-2px)}.portrait-scene:hover .portrait-paper{transform:rotate(7deg) translateX(4px)}.portrait-scene:hover .portrait-frame,.portrait-scene:hover .portrait-caption{transform:none}}
+@media(max-width:680px){.bookmark-link{right:-13px;height:44px}.bookmark-tip{top:6px}.profile-overview .profile-contact{gap:7px 16px}.profile-sidebar .email-action{margin-top:7px}.profile-sidebar .contact .email-action .mail-link{margin-top:0}.footer-flower{width:20px;height:25px;margin:0 8px}}
+@media(pointer:coarse){.copy-email{width:44px;height:44px;padding:13px}}
+@media(prefers-reduced-motion:reduce){.bookmark-link .hero-bookmark,.bookmark-tip,.profile-overview .portrait,.portrait-paper,.copy-email{transition:none}.bookmark-link:hover .hero-bookmark,.bookmark-link:focus-visible .hero-bookmark{transform:none}.portrait-scene:hover .portrait{transform:rotate(-2.5deg)}.portrait-scene:hover .portrait-paper{transform:rotate(4deg)}}
+@media print{.bookmark-link,.copy-email,.copy-feedback,.footer-flower{display:none!important}}

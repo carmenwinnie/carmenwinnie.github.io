@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+/* Milk-white paper, butter yellow, and a little apricot. Layout is shared with the default theme. */
+html[data-theme="yellow"] {
+  --ink: #4d423b;
+  --text: #62564e;
+  --muted: #78695f;
+  --accent: #896246;
+  --line: #eee4d2;
+  --paper: #fffdf7;
+  --lavender: #fff0c9;
+  --hobby-ink: #907968;
+  --hobby-paper: #fffef9;
+  --hobby-fill: #f8e3ad;
+  --hobby-light: #fff2d4;
+  --hobby-accent: #e9c1a2;
+  --placeholder-fill: #fff0c9;
+}
+
+html[data-theme="yellow"] body {
+  background-color: #fff1cb;
+  background-image: radial-gradient(ellipse at 4% 0, #fff9e7db, transparent 52%), radial-gradient(ellipse at 100% 55%, #f8dec866, transparent 60%);
+}
+html[data-theme="yellow"] ::selection { background: #ffe4b3; color: #4d423b; }
+html[data-theme="yellow"] .shell {
+  border-color: #ffffffeb;
+  background: linear-gradient(135deg, #fffef9f7, #fffcf4f2);
+  box-shadow: 0 22px 65px -45px #b7947833;
+}
+
+html[data-theme="yellow"] .brand-wordmark { color: #51433b; }
+html[data-theme="yellow"] .navigation a::after { background: #ecc997; }
+html[data-theme="yellow"] .navigation a:hover,
+html[data-theme="yellow"] .navigation a[aria-current="location"] { color: #825f48; }
+html[data-theme="yellow"] .language-switch { border-color: #f0e3cc; background: #fff0d080; }
+html[data-theme="yellow"] .language-switch button { color: #78695f; }
+html[data-theme="yellow"] .language-switch button[aria-pressed="true"] {
+  color: #795b47;
+  background: #fffef9;
+  box-shadow: 0 1px 4px #b99c7912;
+}
+
+html[data-theme="yellow"] h1 { color: #51433b; }
+html[data-theme="yellow"] .alternate-name { color: #7b6b60; }
+html[data-theme="yellow"] .research-focus,
+html[data-theme="yellow"] .hello-note { color: #8d6b50; }
+html[data-theme="yellow"] .research-focus > span {
+  background: linear-gradient(transparent 88%, #ffe2a999 88%, #ffe2a999 97%, transparent 97%);
+}
+html[data-theme="yellow"] .focus-icon { color: #bf9b70; }
+html[data-theme="yellow"] .identity-summary strong,
+html[data-theme="yellow"] .undergraduate-intro strong,
+html[data-theme="yellow"] .about-bio strong { color: #58473c; }
+html[data-theme="yellow"] .about-bio a strong { color: inherit; }
+html[data-theme="yellow"] .intro a,
+html[data-theme="yellow"] .undergraduate-intro a { color: #896246; border-color: #e9cfaa; }
+html[data-theme="yellow"] .intro a:hover,
+html[data-theme="yellow"] .undergraduate-intro a:hover { border-color: #d7ae82; }
+html[data-theme="yellow"] .undergraduate-intro { color: #6b5a4e; }
+html[data-theme="yellow"] .portrait-frame {
+  background: #fffefa;
+  border-color: #fffefa;
+  outline-color: #f0e5d5;
+  box-shadow: 0 4px 9px #b7988208, 0 15px 25px -18px #b9947440;
+}
+html[data-theme="yellow"] .portrait::before {
+  background: repeating-linear-gradient(90deg, #ffdfa0c7 0 3px, #ffe9b5bf 3px 4px);
+  border-left-color: #ffffffaa;
+  border-right-color: #ffffffaa;
+}
+html[data-theme="yellow"] a.contact-item { color: #896246; }
+html[data-theme="yellow"] .contact-item .icon { color: #b99b80; }
+html[data-theme="yellow"] .cv-link { color: #825f48; background: #fff2d880; border-color: #eeddbf; }
+html[data-theme="yellow"] .cv-link:hover { background: #ffedc3; }
+
+html[data-theme="yellow"] .section-heading h2 { color: #5c493d; }
+html[data-theme="yellow"] .section-heading h2 > .icon { color: #c0a183; }
+html[data-theme="yellow"] .education { border-color: #eee4d2; background: linear-gradient(110deg, #fffefbf5, #fff4dd9e); }
+html[data-theme="yellow"] .school-row + .school-row { border-color: #f0e7d8; }
+html[data-theme="yellow"] .education h3 a { color: #58483d; }
+html[data-theme="yellow"] .education p { color: #78695f; }
+html[data-theme="yellow"] .education .degree { color: #685245; }
+html[data-theme="yellow"] .detail-icon { color: #bba083; }
+html[data-theme="yellow"] .date { color: #7b6b60; }
+html[data-theme="yellow"] .education .date { color: #7b6b60; border-color: #eadfce; }
+
+html[data-theme="yellow"] .publication {
+  border-color: #eee1cb;
+  background: linear-gradient(130deg, #fffefbf0, #fff0d080);
+  box-shadow: 0 10px 22px -23px #c6a27a3d;
+}
+html[data-theme="yellow"] .publication::before { background: #efd09b; }
+html[data-theme="yellow"] .publication::after { border-color: #eddbbb; }
+html[data-theme="yellow"] .paperclip { color: #ceb18d; filter: drop-shadow(0 1px 0 #fffef8); }
+html[data-theme="yellow"] .status { color: #856750; }
+html[data-theme="yellow"] .publication h3 { color: #5b4739; }
+html[data-theme="yellow"] .publication-bottom { color: #78695f; }
+html[data-theme="yellow"] .project { border-color: #edd3ad; }
+html[data-theme="yellow"] .project-type { color: #7b6b60 !important; }
+html[data-theme="yellow"] .project h3 { color: #654d3d; }
+html[data-theme="yellow"] .project-symbol { color: #c3a17c; }
+html[data-theme="yellow"] .project p,
+html[data-theme="yellow"] .description { color: #6b5a4e; }
+html[data-theme="yellow"] .project strong { color: #654d3d; }
+html[data-theme="yellow"] .award-note { color: #856750; }
+
+html[data-theme="yellow"] .company-logo { background: #fffefb; border-color: #f0e5d6; }
+html[data-theme="yellow"] .company-mark { color: #b6977b; background: #fffaef; border-color: #f1e5d0; }
+html[data-theme="yellow"] .experience h3 { color: #624a3b; }
+html[data-theme="yellow"] .organization { color: #725d4e; }
+html[data-theme="yellow"] .language-panel h3,
+html[data-theme="yellow"] .interests h3,
+html[data-theme="yellow"] .contact h2 { color: #825f48; }
+html[data-theme="yellow"] .language-panel h3 .icon,
+html[data-theme="yellow"] .contact h2 .icon { color: #c0a183; }
+html[data-theme="yellow"] .honors-list .detail,
+html[data-theme="yellow"] .language-list dd,
+html[data-theme="yellow"] .contact p { color: #78695f; }
+html[data-theme="yellow"] footer { color: #7b6b60; }
+html[data-theme="yellow"] footer a { color: #89694f; }
+html[data-theme="yellow"] .hobby-art { filter: drop-shadow(0 5px 3px #ba97750b); }
+html[data-theme="yellow"] .hobby figcaption { color: #7b6554; }
+html[data-theme="yellow"] .hobby-camera,
+html[data-theme="yellow"] .hobby-food {
+  --hobby-fill: #f8dfca;
+  --hobby-light: #fff1e5;
+  --hobby-accent: #edc1a0;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-theme="yellow"] .portrait:hover .portrait-frame { box-shadow: 0 18px 28px -18px #bb967640; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  html[data-theme="yellow"] .shell { background: #fffdf7; }
+  html[data-theme="yellow"] .publication { background: #fff8e9; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  html[data-theme="yellow"] body { background-image: none; }
+  html[data-theme="yellow"] .shell,
+  html[data-theme="yellow"] .education,
+  html[data-theme="yellow"] .publication { background: #fffdf7; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media print {
+  html[data-theme="yellow"] body,
+  html[data-theme="yellow"] .shell { background: white; }
+  html[data-theme="yellow"] .shell,
+  html[data-theme="yellow"] .publication,
+  html[data-theme="yellow"] .portrait-frame,
+  html[data-theme="yellow"] .portrait:hover .portrait-frame { box-shadow: none; }
+  html[data-theme="yellow"] .education,
+  html[data-theme="yellow"] .publication,
+  html[data-theme="yellow"] .research-focus > span { background: none; }
+  html[data-theme="yellow"] .hobby-art { filter: none; }
+}
+
+html[data-theme="yellow"] .credentials-grid{--credential-tint:#fff6e3;--credential-surface:#fffefa}

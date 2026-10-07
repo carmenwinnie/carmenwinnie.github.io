@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* A personal introduction, with detail concentrated around the photograph. */
+.profile-overview {
+  display: grid;
+  grid-template-columns: 226px minmax(0, 1fr);
+  gap: 39px;
+  align-items: start;
+  padding: 35px 0 36px;
+}
+.profile-overview .hero-copy {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 1px;
+}
+.profile-overview .hello-note { margin: 0 0 6px; font-size: 19px; }
+.profile-overview .hero-copy .name-row { min-height: 0; }
+.profile-overview .name-row { margin: 0 0 11px; gap: 7px 14px; padding: 0; min-height: 0; }
+.profile-overview h1 { font-size: 49px; letter-spacing: -.035em; line-height: 1.15; }
+.profile-overview .alternate-name { font-size: 12px; }
+.profile-overview .given-name { position: relative; display: inline-block; isolation: isolate; }
+.profile-overview .given-name::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  right: -3px;
+  bottom: -1px;
+  height: 9px;
+  border-bottom: 3px solid var(--hobby-fill, #e4d5eb);
+  border-radius: 0 0 52% 35%;
+  transform: rotate(-2deg);
+}
+.profile-overview .about-bio { margin-top: 17px; font-size: 16px; line-height: 1.85; width: 100%; max-width: none; }
+.profile-overview .profile-contact { margin-top: 18px; }
+
+.portrait-scene { grid-column: 1; grid-row: 1; position: relative; width: 226px; padding: 9px 6px 20px; margin-top: 11px; isolation: isolate; }
+.portrait-paper {
+  position: absolute;
+  inset: 13px 9px 25px 4px;
+  z-index: -1;
+  background: var(--hobby-light, #eee6f2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  transform: rotate(4deg);
+  opacity: .64;
+}
+.profile-overview .portrait { position: relative; top: auto; right: auto; width: 214px; margin: 0; transform: rotate(-2.5deg); }
+.profile-overview .portrait-frame { height: 266px; border-width: 8px; border-bottom-width: 22px; }
+.profile-overview .portrait img { object-position: center 22%; }
+.profile-overview .portrait::before { top: -9px; left: calc(50% - 31px); width: 62px; height: 22px; transform: rotate(6deg); }
+.portrait-piano { position: absolute; z-index: 3; width: 66px; height: 66px; right: -8px; bottom: -1px; transform: rotate(7deg); filter: drop-shadow(0 2px 0 var(--paper)) drop-shadow(2px 0 0 var(--paper)) drop-shadow(-2px 0 0 var(--paper)); pointer-events: none; }
+html[lang="zh-Hans"] .profile-overview h1 { font-size: 41px; letter-spacing: .04em; }
+html[lang="zh-Hans"] .profile-overview .name-row { padding: 0; }
+
+@media (max-width: 1120px) {
+  .profile-overview { grid-template-columns: 214px minmax(0, 1fr); gap: 32px; }
+  .portrait-scene { width: 214px; }
+  .profile-overview .portrait { width: 202px; }
+  .profile-overview .portrait-frame { height: 256px; }
+  .profile-overview h1 { font-size: 45px; }
+}
+@media (max-width: 900px) {
+  .profile-overview { grid-template-columns: 195px minmax(0, 1fr); gap: 28px; padding: 31px 0 32px; }
+  .portrait-scene { width: 195px; margin-top: 18px; }
+  .profile-overview .portrait { width: 183px; }
+  .profile-overview .portrait-frame { height: 235px; }
+  .profile-overview h1 { font-size: 41px; }
+  .profile-overview .about-bio { font-size: 14px; line-height: 1.85; margin-top: 16px; }
+  .portrait-piano { width: 59px; height: 59px; right: -7px; }
+}
+@media (max-width: 680px) {
+  .profile-overview { display: grid; grid-template-columns: 130px minmax(0, 1fr); grid-template-rows: 28px minmax(125px,auto) auto auto; gap: 0 21px; padding: 25px 0 28px; }
+  .profile-overview .hero-copy { display: contents; }
+  .portrait-scene { grid-column: 1; grid-row: 1 / 3; align-self: start; width: 130px; padding: 7px 5px 17px; margin: 6px 0 10px; }
+  .profile-overview .portrait { width: 120px; }
+  .profile-overview .portrait-frame { height: 151px; border-width: 5px; border-bottom-width: 14px; }
+  .profile-overview .portrait::before { width: 44px; height: 17px; left: calc(50% - 22px); top: -8px; }
+  .portrait-paper { inset: 11px 7px 22px 4px; }
+  .portrait-piano { width: 45px; height: 45px; right: -5px; bottom: 1px; }
+  .profile-overview .hello-note { grid-column: 2; grid-row: 1; align-self: end; margin: 0; font-size: 17px; }
+  .profile-overview .name-row { display: block; grid-column: 2; grid-row: 2; align-self: start; min-height: 0; padding: 8px 0 0; margin: 0; }
+  .profile-overview h1 { font-size: 36px; line-height: 1.14; letter-spacing: -.04em; }
+  .profile-overview .alternate-name { display: block; font-size: 11px; margin-top: 11px; }
+  .profile-overview .about-bio { grid-column: 1 / -1; grid-row: 3; margin: 13px 0 0; font-size: 14px; line-height: 1.85; }
+  .profile-overview .profile-contact { grid-column: 1 / -1; grid-row: 4; margin-top: 16px; gap: 10px 12px; }
+  html[lang="zh-Hans"] .profile-overview h1 { font-size: 32px; letter-spacing: .035em; }
+  html[lang="zh-Hans"] .profile-overview .name-row { padding: 9px 0 0; }
+}
+@media (max-width: 350px) {
+  .profile-overview { grid-template-columns: 112px minmax(0,1fr); gap: 0 17px; grid-template-rows: 26px minmax(112px,auto) auto auto; }
+  .portrait-scene { width: 112px; }
+  .profile-overview .portrait { width: 102px; }
+  .profile-overview .portrait-frame { height: 132px; }
+  .portrait-piano { width: 39px; height: 39px; }
+  .profile-overview h1 { font-size: 31px; }
+  .profile-overview .about-bio { font-size: 13px; }
+  html[lang="zh-Hans"] .profile-overview h1 { font-size: 28px; }
+}
+@media print {
+  .profile-overview .portrait { transform: none; }
+  .portrait-paper, .portrait-piano { display: none; }
+}

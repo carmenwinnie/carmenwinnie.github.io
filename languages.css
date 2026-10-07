@@ -1,0 +1,84 @@
+/* Screen typography is tuned per language; the academic print layout stays independent. */
+@media screen {
+  .about-bio,.project p,.honors-list li,.timeline-role{text-wrap:pretty}
+  .school-details h3,.project h3,.timeline-company{word-break:normal;overflow-wrap:break-word}
+  .section-heading h2>span{min-width:0}
+  .section-heading h2::after{flex-shrink:0}
+
+  /* English: compact editorial titles, with comfortable prose leading. */
+  html[lang=en] .profile-overview .about-bio{max-width:80ch;line-height:1.82;letter-spacing:0}
+  html[lang=en] .project p{max-width:55ch;line-height:1.8}
+  html[lang=en] #research .publication h3{max-width:49ch;line-height:1.45}
+  html[lang=en] .project h3{line-height:1.45;text-wrap:balance}
+  html[lang=en] .school-details h3{line-height:1.5;text-wrap:pretty}
+
+  /* French: longer phrases get more width, less tracking and deliberate breaks. */
+  html[lang=fr] .profile-overview .about-bio{max-width:84ch;line-height:1.86;letter-spacing:0;hyphens:none}
+  html[lang=fr] .project p{max-width:59ch;line-height:1.85;hyphens:auto;hyphenate-limit-chars:7 3 3}
+  html[lang=fr] .section-heading h2{line-height:1.35;letter-spacing:-.015em}
+  html[lang=fr] .school-details h3{line-height:1.55;text-wrap:pretty;hyphens:none}
+  html[lang=fr] .education .degree{line-height:1.7}
+  html[lang=fr] #research .publication h3{font-size:23px;max-width:55ch;line-height:1.52;hyphens:none}
+  html[lang=fr] .publication-subtitle{max-width:57ch;line-height:1.7;hyphens:none}
+  html[lang=fr] .project h3{font-size:18px;line-height:1.55;letter-spacing:-.01em;hyphens:none;text-wrap:pretty}
+  html[lang=fr] #experience .timeline-company{line-height:1.6;text-wrap:pretty}
+  html[lang=fr] .timeline-role{line-height:1.75;hyphens:none}
+  html[lang=fr] .languages-main .language-list div{display:grid;grid-template-columns:minmax(68px,.8fr) minmax(0,1.5fr);gap:12px}
+  html[lang=fr] .languages-main .language-list dd{text-wrap:pretty}
+  html[lang=fr] .hobby figcaption{white-space:normal;line-height:1.5;text-wrap:balance}
+  html[lang=fr] .personal-note .section-heading h2{max-width:none}
+
+  /* Chinese: airy character spacing and strict punctuation, without Latin tracking. */
+  html[lang=zh-Hans] .profile-overview .about-bio{max-width:46em;line-height:1.95;letter-spacing:.015em;line-break:strict;word-break:normal}
+  html[lang=zh-Hans] .section-heading h2{letter-spacing:.035em;line-height:1.4}
+  html[lang=zh-Hans] .school-details h3{line-height:1.65;letter-spacing:.01em;text-wrap:pretty}
+  html[lang=zh-Hans] .project h3{font-size:18px;line-height:1.7;letter-spacing:.01em;line-break:strict;text-wrap:pretty}
+  html[lang=zh-Hans] .project p{max-width:32em;line-height:1.95;letter-spacing:.015em;line-break:strict}
+  html[lang=zh-Hans] #research .publication h3{max-width:30em;line-height:1.85;letter-spacing:.025em;line-break:strict;word-break:normal}
+  html[lang=zh-Hans] .publication-subtitle{line-height:1.85;letter-spacing:.015em;margin-top:9px}
+  html[lang=zh-Hans] .timeline-role,html[lang=zh-Hans] .honors-list li{line-height:1.8;letter-spacing:.01em}
+  html[lang=zh-Hans] .education-main .section-heading{margin-bottom:18px}
+  html[lang=zh-Hans] .primary-column>#research{padding-top:35px;padding-bottom:37px}
+  html[lang=zh-Hans] .primary-column>#projects{padding-top:32px;padding-bottom:35px}
+}
+@media screen and (min-width:1121px){
+  html[lang=fr] .primary-column>.personal-note{grid-template-columns:220px minmax(0,1fr)}
+}
+@media screen and (max-width:900px){
+  html[lang=fr] #research .publication h3{font-size:22px}
+}
+@media screen and (max-width:760px){
+  html[lang=fr] .section-heading{margin-bottom:22px}
+  html[lang=fr] #research .publication h3{font-size:22px;line-height:1.52}
+  html[lang=fr] .project h3{font-size:18px;line-height:1.55}
+  html[lang=fr] .hobby figcaption{font-size:12px}
+  html[lang=zh-Hans] .primary-column>#research{padding:29px 0 32px}
+  html[lang=zh-Hans] .primary-column>#projects{padding:28px 0 31px}
+  html[lang=zh-Hans] .project h3{font-size:17px}
+  html[lang=zh-Hans] #research .publication h3{font-size:18px;line-height:1.85;letter-spacing:.015em}
+  html[lang=zh-Hans] .publication-subtitle{font-size:13px}
+}
+@media screen and (max-width:680px){
+  html[lang=en] .profile-overview .about-bio{line-height:1.82}
+  html[lang=fr] .profile-overview .about-bio{line-height:1.86}
+  html[lang=zh-Hans] .profile-overview .about-bio{line-height:1.95;letter-spacing:.01em}
+}
+/* Long Latin company names need the full nested timeline width on phones. */
+@media screen and (max-width:600px){
+  html[lang=fr] .timeline-entry{grid-template-columns:minmax(0,1fr);row-gap:7px}
+  html[lang=fr] .timeline-month-date{padding-top:0;line-height:1.6}
+  html[lang=fr] .timeline-entry::before{top:9px}
+  html[lang=fr] .timeline-entry::after{top:7px}
+  html[lang=fr] .timeline-year-group:last-child::before{height:33px}
+  html[lang=fr] .timeline-content{gap:10px}
+}
+@media screen and (max-width:420px){
+  html[lang=en] .timeline-entry{grid-template-columns:minmax(0,1fr);row-gap:7px}
+  html[lang=en] .timeline-month-date{padding-top:0;line-height:1.6}
+  html[lang=en] .timeline-entry::before{top:9px}
+  html[lang=en] .timeline-entry::after{top:7px}
+  html[lang=en] .timeline-year-group:last-child::before{height:33px}
+  html[lang=fr] #research .publication h3{font-size:21px}
+  html[lang=fr] .publication-subtitle{font-size:13px}
+}
+
